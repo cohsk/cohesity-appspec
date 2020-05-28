@@ -146,12 +146,13 @@ func RunCohesityMount() error {
     return err
   }
   var mountOptions models.MountOptions
+  var createMountParams models.CreateMountParams
 
   // Default Protocol
   if FLAGS_protocol == kSmbProtocol {
     // Setting the mount parameters.
     mountOptions = models.MountOptions{
-      ViewName:      FLAGS_view,
+      ViewName:      &FLAGS_view,
       DirName:       FLAGS_mountDir,
       MountProtocol: models.MountProtocol_KSMB,
       MountOptions:  &FLAGS_options,
@@ -162,7 +163,7 @@ func RunCohesityMount() error {
   } else {
     // Settings the mount parameters
     mountOptions = models.MountOptions{
-      ViewName:      FLAGS_view,
+      ViewName:      &FLAGS_view,
       DirName:       FLAGS_mountDir,
       MountProtocol: models.MountProtocol_KNFS,
       MountOptions:  &FLAGS_options,
@@ -171,7 +172,8 @@ func RunCohesityMount() error {
   }
 
   // Making mount call using sdk.
-  err = appClient.Mount().CreateMount(&mountOptions)
+  createMountParams = models.CreateMountParams{ MountOptions: &mountOptions }
+  err = appClient.Mount().CreateMount(&createMountParams)
 
   if err != nil {
     glog.Errorf(fmt.Sprint(err))
