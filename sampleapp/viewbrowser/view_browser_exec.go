@@ -4,7 +4,7 @@
 package main
 
 import (
-  "github.com/cohesity/cohesity-appspec/sampleapp/viewbrowser/server"
+  "github.com/cohsk/cohesity-appspec/sampleapp/viewbrowser/server"
 )
 
 func main() {
