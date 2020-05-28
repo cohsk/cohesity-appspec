@@ -2,6 +2,8 @@ Cohesity Developer Tools
 ========================
 This repository contains samples and tools for App developers to write 
 applications for Cohesity App and DataPlatform.
+
+This repo was cloned from the original cohesity/cohesity-appspec repo on May 27, 2020
  
 # Sample App
 Sample App called viewbrowser to list the cohesity views.
