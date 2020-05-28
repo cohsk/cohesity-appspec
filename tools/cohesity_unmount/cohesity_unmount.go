@@ -8,7 +8,7 @@ import (
   "os"
 
   "github.com/golang/glog"
-  "github.com/cohesity/cohesity-appspec/tools/cohesity_unmount/cohesityumount"
+  "github.com/cohsk/cohesity-appspec/tools/cohesity_unmount/cohesityumount"
 )
 
 func main() {
