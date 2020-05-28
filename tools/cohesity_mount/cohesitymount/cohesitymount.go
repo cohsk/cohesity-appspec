@@ -11,7 +11,7 @@ import (
   "github.com/cohesity/app-sdk-go/appsdk"
   "github.com/cohesity/app-sdk-go/models"
   "github.com/golang/glog"
-  "github.com/cohesity/cohesity-appspec/tools/cohesity_mount/utils"
+  "github.com/cohsk/cohesity-appspec/tools/cohesity_mount/utils"
 )
 
 var (
