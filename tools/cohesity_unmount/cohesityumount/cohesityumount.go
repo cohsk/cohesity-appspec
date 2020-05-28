@@ -8,6 +8,7 @@ import (
   "os"
 
   "github.com/cohesity/app-sdk-go/appsdk"
+  "github.com/cohesity/app-sdk-go/models"
   "github.com/golang/glog"
 )
 
@@ -66,7 +67,8 @@ func Init() error {
 func RunCohesityUnmount() error {
 
   // Issuing unmount command using cohesityAppSdk.
-  if err := appClient.Mount().DeleteUnmount(FLAGS_unmountDir); err != nil {
+  unmountDirFlags := models.DeleteUnmountParams { FLAGS_unmountDir }
+  if err := appClient.Mount().DeleteUnmount(&unmountDirFlags); err != nil {
     errMsg := "Error: " + err.Error()
     glog.Errorln(errMsg)
     return err
