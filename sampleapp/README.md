@@ -19,6 +19,10 @@ After installing GO, use `go get` to install the sample app: viewbrowser:
 
 ```go get github.com/cohsk/cohesity-appspec/sampleapp/viewbrowser```
 
+and, grab the yaml.v2 library
+
+```go get gopkg.in/yaml.v2```
+
 This will also get all the dependencies including Cohesity App and 
 Management Go SDKs.
 
